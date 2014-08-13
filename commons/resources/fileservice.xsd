@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.dayang.com/channelwrap/fileservice/xsd" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.dayang.com/channelwrap/fileservice/xsd">
+    <xs:complexType name="StorageInfoType">
+        <xs:sequence>
+            <xs:element name="StoragePathType" type="xs:int"/>
+            <xs:element name="StoragePath" type="xs:string"/>
+            <xs:element minOccurs="0" name="StoragePathUserName" type="xs:string"/>
+            <xs:element minOccurs="0" name="StoragePathPassword" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="FileType">
+        <xs:sequence>
+            <xs:element name="FileName" type="xs:string"/>
+            <xs:element name="FileStorageInfo" type="ns1:StorageInfoType"/>
+            <xs:element name="FileId" type="xs:string"/>
+            <xs:element minOccurs="0" name="ClipInfoId" type="xs:string"/>
+            <xs:element minOccurs="0" name="ClipInfoStatus" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="CreateDirRequest" type="ns1:CreateDirRequestType"/>
+    <xs:complexType name="CreateDirRequestType">
+        <xs:sequence>
+            <xs:element name="StorageInfo" type="ns1:StorageInfoType"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="CreateDirResponse" type="ns1:CommonResponseType"/>
+    <xs:complexType name="CommonResponseType">
+        <xs:sequence>
+            <xs:element name="Result">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="SUCCESS"/>
+                        <xs:enumeration value="FAILURE"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="Description" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="DeleteFileReqeust" type="ns1:DeleteFileRequestType"/>
+    <xs:complexType name="DeleteFileRequestType">
+        <xs:sequence>
+            <xs:element name="FileInfo" type="ns1:FileType"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="DeleteFileResponse" type="ns1:DeleteFileResponseType"/>
+    <xs:complexType name="DeleteFileResponseType">
+        <xs:sequence>
+            <xs:element name="Result">
+                <xs:simpleType>
+                    <xs:restriction base="xs:int">
+                        <xs:enumeration value="0"/>
+                        <xs:enumeration value="1"/>
+                        <xs:enumeration value="2"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="Description" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="UnZipFileRequest" type="ns1:UnZipFileRequestType"/>
+    <xs:complexType name="UnZipFileRequestType">
+        <xs:sequence>
+            <xs:element name="FileInfo" type="ns1:FileType"/>
+            <xs:element name="TargetStorage" type="ns1:StorageInfoType"/>
+            <xs:element name="CallbackServiceUrl" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="UnZipFileResponse" type="ns1:CommonResponseType"/>
+    <xs:element name="UnZipFileCallbackRequest" type="ns1:UnZipFileCallbackRequestType"/>
+    <xs:element name="UnZipFileCallbackResponse" type="ns1:CommonResponseType"/>
+    <xs:complexType name="UnZipFileCallbackRequestType">
+        <xs:sequence>
+            <xs:element name="UnZipFile" type="ns1:FileType"/>
+            <xs:element name="Result" type="xs:string"/>
+            <xs:element minOccurs="0" name="Description"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="CanDirReachResponse" type="ns1:CanDirReachResponseType"/>
+    <xs:element name="CanDirReachRequest" type="ns1:CanDirReachRequestType"/>
+    <xs:complexType name="CanDirReachRequestType">
+        <xs:sequence>
+            <xs:element name="DirPath" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="PingResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="xs:boolean"/>
+                <xs:element minOccurs="0" name="description" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PingRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="host" type="xs:string"/>
+                <xs:element minOccurs="0" name="port" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="CanDirReachResponseType">
+        <xs:sequence>
+            <xs:element name="Result" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ProjectXmlType">
+        <xs:sequence>
+            <xs:element name="XmlContent" type="xs:string"/>
+            <xs:element name="Md5Value" type="xs:string"/>
+            <xs:element name="StorageInfo" type="ns1:StorageInfoType"/>
+            <xs:element name="FileName" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ReceiveProjectXmlRequest" type="ns1:ProjectXmlType"/>
+    <xs:element name="ReceiveProjectXmlResponse" type="ns1:CommonResponseType"/>
+</xs:schema>

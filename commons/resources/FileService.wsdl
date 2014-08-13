@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://www.dayang.com/channelwrap/fileservice/service" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://www.dayang.com/channelwrap/fileservice/xsd" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:y="http://www.dayang.com/channelwrap/fileservice/service">
+  <types>
+    <xs:schema targetNamespace="http://schemas.xmlsoap.org/wsdl/">
+			<xs:import namespace="http://www.dayang.com/channelwrap/fileservice/xsd" schemaLocation="fileservice.xsd"/>
+		</xs:schema>
+  </types>
+  <message name="PingResponse">
+    <part name="PingResponse" element="ns1:PingResponse">
+    </part>
+  </message>
+  <message name="ReceiveProjectXmlRequest">
+    <part name="ReceiveProjectXmlRequest" element="ns1:ReceiveProjectXmlRequest">
+    </part>
+  </message>
+  <message name="UnZipFileResponse">
+    <part name="UnZipFileResponse" element="ns1:UnZipFileResponse">
+    </part>
+  </message>
+  <message name="PingRequest">
+    <part name="PingRequest" element="ns1:PingRequest">
+    </part>
+  </message>
+  <message name="DeleteFileResponse">
+    <part name="DeleteFileResponse" element="ns1:DeleteFileResponse">
+    </part>
+  </message>
+  <message name="CanDirReachRequest">
+    <part name="CanDirReachRequest" element="ns1:CanDirReachRequest">
+    </part>
+  </message>
+  <message name="CreateDirResponse">
+    <part name="CreateDirResponse" element="ns1:CreateDirResponse">
+    </part>
+  </message>
+  <message name="CanDirReachResponse">
+    <part name="CanDirReachResponse" element="ns1:CanDirReachResponse">
+    </part>
+  </message>
+  <message name="ReceiveProjectXmlResponse">
+    <part name="ReceiveProjectXmlResponse" element="ns1:ReceiveProjectXmlResponse">
+    </part>
+  </message>
+  <message name="DeleteFileRequest">
+    <part name="DeleteFileRequest" element="ns1:DeleteFileReqeust">
+    </part>
+  </message>
+  <message name="UnZipFileRequest">
+    <part name="UnZipFileRequest" element="ns1:UnZipFileRequest">
+    </part>
+  </message>
+  <message name="CreateDirRequest">
+    <part name="CreateDirRequest" element="ns1:CreateDirRequest">
+    </part>
+  </message>
+  <portType name="FileServicePortType">
+    <operation name="CreateDir">
+      <input message="y:CreateDirRequest">
+    </input>
+      <output message="y:CreateDirResponse">
+    </output>
+    </operation>
+    <operation name="DeleteFile">
+      <input message="y:DeleteFileRequest">
+    </input>
+      <output message="y:DeleteFileResponse">
+    </output>
+    </operation>
+    <operation name="UnZipFile">
+      <input message="y:UnZipFileRequest">
+    </input>
+      <output message="y:UnZipFileResponse">
+    </output>
+    </operation>
+    <operation name="CanDirReach">
+      <input message="y:CanDirReachRequest">
+    </input>
+      <output message="y:CanDirReachResponse">
+    </output>
+    </operation>
+    <operation name="ReceiveProjectXml">
+      <input message="y:ReceiveProjectXmlRequest">
+    </input>
+      <output message="y:ReceiveProjectXmlResponse">
+    </output>
+    </operation>
+    <operation name="ping">
+      <input message="y:PingRequest">
+    </input>
+      <output message="y:PingResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="FileServiceBinding" type="y:FileServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="CreateDir">
+      <soap:operation/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="DeleteFile">
+      <soap:operation/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="UnZipFile">
+      <soap:operation/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="CanDirReach">
+      <soap:operation/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="ReceiveProjectXml">
+      <soap:operation/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="ping">
+      <soap:operation/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="FileService">
+    <port name="FileServicePort" binding="y:FileServiceBinding">
+      <soap:address location="http://localhost/"/>
+    </port>
+  </service>
+</definitions>

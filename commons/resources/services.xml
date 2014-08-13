@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was auto-generated from WSDL -->
+<!-- by the Apache Axis2 version: 1.6.0  Built on : May 17, 2011 (04:19:43 IST) -->
+<serviceGroup>
+    <service name="FileService">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="com.dayang.www.channelwrap.fileservice.service.FileServiceMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">com.dayang.www.channelwrap.fileservice.service.FileServiceSkeleton</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="ReceiveProjectXml" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.dayang.com/channelwrap/fileservice/service">
+            <actionMapping>http://www.dayang.com/channelwrap/fileservice/service/FileServicePortType/ReceiveProjectXmlRequest</actionMapping>
+            <outputActionMapping>http://www.dayang.com/channelwrap/fileservice/service/FileServicePortType/ReceiveProjectXmlResponse</outputActionMapping>
+        </operation>
+        <operation name="CanDirReach" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.dayang.com/channelwrap/fileservice/service">
+            <actionMapping>http://www.dayang.com/channelwrap/fileservice/service/FileServicePortType/CanDirReachRequest</actionMapping>
+            <outputActionMapping>http://www.dayang.com/channelwrap/fileservice/service/FileServicePortType/CanDirReachResponse</outputActionMapping>
+        </operation>
+        <operation name="ping" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.dayang.com/channelwrap/fileservice/service">
+            <actionMapping>http://www.dayang.com/channelwrap/fileservice/service/FileServicePortType/pingRequest</actionMapping>
+            <outputActionMapping>http://www.dayang.com/channelwrap/fileservice/service/FileServicePortType/pingResponse</outputActionMapping>
+        </operation>
+        <operation name="CreateDir" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.dayang.com/channelwrap/fileservice/service">
+            <actionMapping>http://www.dayang.com/channelwrap/fileservice/service/FileServicePortType/CreateDirRequest</actionMapping>
+            <outputActionMapping>http://www.dayang.com/channelwrap/fileservice/service/FileServicePortType/CreateDirResponse</outputActionMapping>
+        </operation>
+        <operation name="DeleteFile" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.dayang.com/channelwrap/fileservice/service">
+            <actionMapping>http://www.dayang.com/channelwrap/fileservice/service/FileServicePortType/DeleteFileRequest</actionMapping>
+            <outputActionMapping>http://www.dayang.com/channelwrap/fileservice/service/FileServicePortType/DeleteFileResponse</outputActionMapping>
+        </operation>
+        <operation name="UnZipFile" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.dayang.com/channelwrap/fileservice/service">
+            <actionMapping>http://www.dayang.com/channelwrap/fileservice/service/FileServicePortType/UnZipFileRequest</actionMapping>
+            <outputActionMapping>http://www.dayang.com/channelwrap/fileservice/service/FileServicePortType/UnZipFileResponse</outputActionMapping>
+        </operation>
+    </service>
+</serviceGroup>
